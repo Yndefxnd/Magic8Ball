@@ -1,14 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   background: radial-gradient(circle at center, #0a0a23 0%, #000000 100%);
   color: white;
   font-family: "Segoe UI", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 120px;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -174,7 +175,7 @@ body::before {
 .main__magic__ball-triangle {
   width: 66%;
   aspect-ratio: 230 / 170;
-/*   clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background-image: url('background.png');
   background-size: cover;
   background-position: center;
