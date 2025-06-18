@@ -24,6 +24,8 @@ body::before {
   pointer-events: none;
 }
 
+/*Анимации*/
+
 @keyframes stars {
   0% {
     transform: translate(0, 0);
@@ -83,6 +85,8 @@ body::before {
   font-size: clamp(20px, 4vw + 1rem, 30px);
   font-weight: bold;
 }
+
+
 
 .main__inner {
   display: flex;
@@ -271,10 +275,10 @@ input:focus {
 .fade-show {
   opacity: 1 !important;
   transform: scale(1) !important;
-  display: flex !important; /* Чтобы явно показать элемент */
+  display: flex !important;
 }
 
-/* Класс для плавного скрытия восьмёрки */
+
 .fade-hide {
   opacity: 0;
   transform: scale(0.7);
