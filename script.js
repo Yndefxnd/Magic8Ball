@@ -48,7 +48,6 @@ submit.addEventListener("click", () => {
 
       eight.classList.add("fade-hide");
 
-      // Скрываем тень шара
       magicBall.classList.add("hide-before");
 
       setTimeout(() => {
