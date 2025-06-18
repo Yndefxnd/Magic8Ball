@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0a0a23 0%, #000000 100%);
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent
+    url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  animation: stars 60s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes stars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-500px, -500px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-10px, -10px);
+  }
+  20% {
+    transform: translate(-20px, -20px);
+  }
+  30% {
+    transform: translate(-30px, -30px);
+  }
+  40% {
+    transform: translate(-40px, -40px);
+  }
+  50% {
+    transform: translate(-50px, -50px);
+  }
+  60% {
+    transform: translate(-60px, -60px);
+  }
+  70% {
+    transform: translate(-70px, -70px);
+  }
+  80% {
+    transform: translate(-80px, -80px);
+  }
+  90% {
+    transform: translate(-90px, -90px);
+  }
+  100% {
+    transform: translate(-100px, -100px);
+  }
+}
+
+
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+
+.header__title {
+  font-size: clamp(20px, 4vw + 1rem, 30px);
+  font-weight: bold;
+}
+
+.main__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+
+
+.shake-animation {
+  animation: shake 0.2s ease-in-out infinite alternate;
+}
+
+.hide-before::before,
+.main__magic__ball::after {
+  content: none !important;
+}
+
+.main__magic__ball {
+  background-color: black;
+  width: clamp(175px, 18vw + 1rem, 350px);
+  height: clamp(175px, 18vw + 1rem, 350px);
+  overflow: visible;
+  position: relative;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8% rgba(0, 0, 0, 0.8),
+    inset 0 -4% 8% rgba(0, 0, 0, 0.8),
+    0 0 12% rgba(0, 0, 255, 0.2);
+}
+
+.main__magic__ball::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.main__magic__ball::after {
+  content: "";
+  position: absolute;
+  width: 35%;
+  height: 12%;
+  bottom: -6%;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0.6);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.3), transparent);
+  filter: blur(10px);
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.main__magic__ball-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.main__magic__ball-eight {
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: clamp(1.2rem, 4vw, 3rem);
+  text-align: center;
+  z-index: 2;
+}
+
+.main__magic__ball-triangle {
+  width: 66%;
+  aspect-ratio: 230 / 170;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #4b4bff;
+  box-shadow: 0 0 1em #4b4bff88;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.main__magic__ball-triangle:hover {
+  box-shadow: 0 0 2em #7f7fff;
+  transform: translate(-50%, -45%) scale(1.05);
+}
+
+.main__magic__ball-triangle__answer {
+  color: white;
+  font-size: clamp(0.6rem, 1.2vw, 1rem);
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  max-width: 80%;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.main__magic__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 3vh, 25px);
+  justify-content: center;
+  width: 100%;
+  padding: clamp(10px, 3vw, 30px);
+}
+
+.main__magic__form-input {
+  width: clamp(250px, 50vw, 700px);
+  height: clamp(35px, 4vh, 45px);
+  font-size: clamp(16px, 4vw, 25px);
+  border: 2px solid #2d2d75;
+  background: linear-gradient(145deg, #1a1a40, #0f0f2b);
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #4b4bff;
+  border-color: #4b4bff;
+}
+
+.main__magic__form-button {
+  width: clamp(180px, 45vw, 300px);
+  height: clamp(35px, 5vh, 50px);
+  font-size: clamp(16px, 5vw, 25px);
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #1a1a40, #0f0f2b);
+  border: 2px solid #4b4bff;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.main__magic__form-button:hover {
+  background: linear-gradient(145deg, #2d2d75, #1a1a40);
+  border-color: #7f7fff;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #7f7fff88;
+}
+
+.main__magic__form-button:active {
+  transform: scaleX(1.2);
+}
+
+.main__magic__form-error {
+  font-size: clamp(16px, 4vw, 25px);
+  color: #21098a;
+  font-weight: bold;
+  display: none;
+  text-align: center;
+}
+
+
+.fade-transition {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  display: flex !important; /* Чтобы явно показать элемент */
+}
+
+/* Класс для плавного скрытия восьмёрки */
+.fade-hide {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}

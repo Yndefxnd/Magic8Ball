@@ -1,0 +1,39 @@
+<!DOCTёYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 magic ball</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a href="#" class="header__logo">
+          <img src="logo.svg" alt="" class="header__logo-image" />
+        </a>
+        <h1 class="header__title">8 Magic ball</h1>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__inner">
+          <div class="main__magic__ball" id="main__magic__ball">
+            <div class="main__magic__ball-inner">
+              <div class="main__magic__ball-triangle">
+                <div class="main__magic__ball-triangle__answer">Ответ</div>
+              </div>
+              <div class="main__magic__ball-eight">8</div>
+            </div>
+          </div>
+        <div class="main__magic__form">
+          <input type="text" class="main__magic__form-input" />
+          <span class="main__magic__form-error"
+            >Без вопроса магический шар молчит!</span
+          >
+          <button class="main__magic__form-button" type="submit">SHAKE!</button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
