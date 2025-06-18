@@ -9,7 +9,6 @@ const triangle = document.querySelector(".main__magic__ball-triangle");
 const answers = [
   "Без<br>сомнения",
   "Никаких<br>сомнений",
-  "<br>Определённо<br>да",
   "Можешь<br>быть<br>уверен",
   "Хорошие<br>перспективы",
   "Скорее<br>всего",
